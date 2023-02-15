@@ -17,6 +17,10 @@ body {
   margin: 50px auto;
 }
 
+header {
+  position: relative;
+}
+
 header .logo {
   font-weight: 600;
   font-size: 20px;
@@ -72,6 +76,31 @@ header .presentation::before {
   color: #eb7f7f;
 }
 
+header .shop-cart-button {
+  float: right;
+  cursor: pointer;
+  transition: color, transform 500ms ease;
+}
+
+header .shop-cart-button:hover,
+header .shop-cart-button.active {
+  color: #dc3d3d;
+  transform: scale(1.5)
+}
+
+header .shop-cart {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  width: 450px;
+  min-height: 100px;
+  background: #fafafa;
+  -webkit-box-shadow: -21px 29px 17px 1px rgba(34, 60, 80, 0.26);
+  -moz-box-shadow: -21px 29px 17px 1px rgba(34, 60, 80, 0.26);
+  box-shadow: -21px 29px 17px 1px rgba(34, 60, 80, 0.26);
+  z-index: 1000;
+}
+
 main {
   display: flex;
   width: 100%;
@@ -123,16 +152,11 @@ main .add-to-cart {
   cursor: pointer;
   font-weight: 600;
   transition: transform 500ms ease;
-
 }
 
-main .add-to-cart:hover{
-  transform: scale(1.5) translateY(-5px)
-
+main .add-to-cart:hover {
+  transform: scale(1.5) translateY(-5px);
 }
-
-
-
 
 footer {
   text-align: center;

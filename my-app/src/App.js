@@ -1,11 +1,11 @@
 import React from "react";
-import Header from "./Header";
-import Footer from "./Footer";
-import Items from "./Items";
+import Header from "./components/header/Header";
+import Footer from "./components/footer/Footer";
+import Items from "./components/items/Items";
 import { useState } from "react";
 import { ToastContainer } from "react-toastify";
-import { notify } from "./notyfy"; // Уведомления
-import { products } from "./products"; // object products
+import { notify } from "./utils/notyfy"; // Уведомления
+import { products } from "./utils/products"; // object products
 
 function App() {
   const [goodsShop] = useState(products);

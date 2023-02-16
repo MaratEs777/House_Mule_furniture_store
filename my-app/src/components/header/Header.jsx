@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { FaShoppingBag } from "react-icons/fa";
-import Order from "./Order";
+import Order from "../order/Order";
 
 const showOrders = (props) => {
-  let sum = 0
-  props.orders.forEach(el => sum += Number.parseFloat(el.price))
+  let sum = 0;
+  props.orders.forEach((el) => (sum += Number.parseFloat(el.price)));
   return (
     <div>
       {props.orders.map((el) => (

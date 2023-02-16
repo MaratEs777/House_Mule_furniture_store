@@ -8,8 +8,12 @@ import { notify } from "./notyfy"; // Уведомления
 import { products } from "./products"; // object products
 
 function App() {
-  const [goodsShop, setGoodShop] = useState(products);
+  const [goodsShop] = useState(products);
   const [basket, setBasket] = useState(products);
+
+  const deleteOrder = (id) => {
+    setBasket({ orders: basket.orders.filter((el) => el.id !== id) });
+  };
 
   const addToOrder = (item) => {
     let isInArray = false;
@@ -28,7 +32,7 @@ function App() {
 
   return (
     <div className="wrapper">
-      <Header orders={basket.orders} />
+      <Header orders={basket.orders} onDelete={deleteOrder} />
       <Items product={goodsShop} onAdd={addToOrder} />
       <Footer />
       <ToastContainer />

@@ -5,9 +5,8 @@ function Items(props) {
   return (
     <main>
       {props.product.items.map((el) => (
-       <Item key={el.id} item={el}/>
+        <Item key={el.id} item={el} onAdd={props.onAdd}  />
       ))}
-      
     </main>
   );
 }

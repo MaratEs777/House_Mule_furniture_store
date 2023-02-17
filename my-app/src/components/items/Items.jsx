@@ -4,7 +4,7 @@ import Item from "./Item";
 function Items(props) {
   return (
     <main>
-      {props.product.items.map((el) => (
+      {props.product.map((el) => (
         <Item key={el.id} item={el} onAdd={props.onAdd} />
       ))}
     </main>

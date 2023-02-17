@@ -1,5 +1,6 @@
 export const products = {
   orders: [],
+  newArr: [],
   items: [
     {
       id: 1,

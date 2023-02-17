@@ -1,13 +1,13 @@
 import { useState } from "react";
-import categoriObj from "../../utils/categoriObj"; // объект с категориями (utils)
+import { categoriObj } from "../../utils/categoriObj"; // объект с категориями (utils)
 
 function Categories(props) {
-  const [categoriesName, setCategoriesName] = useState(categoriObj);
+  const [categoriesName] = useState(categoriObj);
 
   return (
     <div className="categories">
       {categoriesName.categories.map((el) => (
-        <div key={el.key} onClick={() => props.chooseCategori(el.key)}>
+        <div key={el.key} onClick={() => props.chooseCategory(el.key)}>
           {el.name}
         </div>
       ))}

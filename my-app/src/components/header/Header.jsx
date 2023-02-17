@@ -28,7 +28,7 @@ function Header(props) {
   return (
     <header>
       <div>
-        <span className="logo">House Staff</span>
+        <span className="logo">House Mule</span>
         <FaStickerMule className="mule"/>
         <ul className="nav">
           <li>Про нас</li>

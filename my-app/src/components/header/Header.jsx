@@ -24,21 +24,54 @@ const showNothing = () => {
 };
 
 function Header(props) {
-  let [cartOpen, setCartOpen] = useState(false);
+  const [cartOpen, setCartOpen] = useState(false);
+  const [aboutUs, setAboutUs] = useState(false);
+  const [contact, setContact] = useState(false)
   return (
     <header>
       <div>
         <span className="logo">House Mule</span>
-        <FaStickerMule className="mule"/>
+        <FaStickerMule className="mule" />
         <ul className="nav">
-          <li>Про нас</li>
-          <li>Контакты</li>
+          <li
+            className={`about-us ${aboutUs && "active"}`}
+            onClick={() => {
+              setAboutUs((!aboutUs));
+            }}
+          >
+            Про нас
+          </li>
+          {aboutUs && (
+            <div className="aboutUs">
+              <h2>
+                «Creating Comfort - Cоздавая Уют».
+                <br />
+                Вот уже 10 лет мы помогаем нашим клиентам создавать уют в своих
+                домах.
+                <br />
+                House Mule - Мебель VIP класса для VIP клиентов.
+              </h2>
+            </div>
+          )}
+          <li
+            className={`contact ${contact && "active"}`}
+            onClick={() => {
+              setContact((!contact));
+            }}
+          >
+            Контакты
+          </li>
+          {contact && (
+            <div className="contacts">
+              <h2>номер телефона : +7-918-835-25-45</h2>
+            </div>
+          )}
           <li>Кабинет</li>
         </ul>
         <FaShoppingBag
           className={`shop-cart-button ${cartOpen && "active"}`}
           onClick={() => {
-            setCartOpen((cartOpen = !cartOpen));
+            setCartOpen((!cartOpen));
           }}
         />
         {cartOpen && (

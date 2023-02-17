@@ -62,18 +62,18 @@ header .presentation::after {
   width: 300px;
   font-size: 40px;
   font-weight: 500;
-  color: #d8d5d5;
+  color: #f7f4f4;
 }
 
 header .presentation::before {
-  content: "по низким ценам";
+  content: "«Creating Comfort - Cоздавая Уют».";
   position: absolute;
   top: 300px;
   left: 50px;
   width: 300px;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 300;
-  color: #eb7f7f;
+  color: #2bea0e;
 }
 
 header .shop-cart-button {
@@ -82,17 +82,21 @@ header .shop-cart-button {
   transition: color, transform 500ms ease;
 }
 
-.mule{
+.mule {
   font-size: 20px;
   margin-left: 10px;
 }
 
+header li:hover,
+header li.active,
 header .shop-cart-button:hover,
 header .shop-cart-button.active {
-  color: #dc3d3d;
+  color: #2bea0e;
   transform: scale(1.5);
 }
 
+header .contacts,
+header .aboutUs,
 header .shop-cart {
   position: absolute;
   top: 30px;
@@ -119,6 +123,8 @@ header .shop-cart .item img {
   margin-right: 20px;
 }
 
+header .contacts h2,
+header .aboutUs h2,
 header .shop-cart .item h2 {
   font-size: 20px;
   margin-bottom: 10px;
@@ -221,12 +227,12 @@ main .add-to-cart,
   position: absolute;
   right: 20px;
   bottom: 20px;
-  background: #ca5252;
-  width: 35px;
-  height: 35px;
+  background: #2bea0e;
+  width: 30px;
+  height: 30px;
   text-align: center;
-  line-height: 35px;
-  color: #fff;
+  line-height: 32px;
+  color: #ffffff;
   border-radius: 50%;
   cursor: pointer;
   font-weight: 600;

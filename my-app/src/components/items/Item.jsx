@@ -3,7 +3,7 @@ import React from "react";
 function Item(props) {
   return (
     <div className="item">
-      <img src={"./img/" + props.item.img} alt={"no_photo"} />
+      <img src={"./img/" + props.item.img} alt={"no_photo"} onClick={() => props.onShowItem(props.item)}/>
       <h2>{props.item.title}</h2>
       <p>{props.item.desc}</p>
       <b>{props.item.price}$</b>

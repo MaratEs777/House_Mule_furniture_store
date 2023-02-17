@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FaShoppingBag } from "react-icons/fa";
+import { FaShoppingBag, FaStickerMule } from "react-icons/fa";
 import Order from "../order/Order";
 
 const showOrders = (props) => {
@@ -29,6 +29,7 @@ function Header(props) {
     <header>
       <div>
         <span className="logo">House Staff</span>
+        <FaStickerMule className="mule"/>
         <ul className="nav">
           <li>Про нас</li>
           <li>Контакты</li>

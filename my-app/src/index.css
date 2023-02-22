@@ -17,36 +17,61 @@ body {
   margin: 50px auto;
 }
 
-header {
-  position: relative;
+:root {
+  --color-1: #186cb8;
+  --color-2: #2a9a9f;
+  --color-3: #f1b211;
+  --color-4: #e83611;
+  --color-5: #f9002f;
 }
+/* header {
+  position: relative;
+} */
 
-header .logo {
+/* header .logo {
   font-weight: 600;
   font-size: 20px;
-}
+} */
 
-header ul.nav {
+/* header ul.nav {
   float: right;
   list-style: none;
   transition: opacity 500ms ease;
-}
+} */
 
-header ul.nav li {
+/* header ul.nav li {
   display: inline;
   margin-left: 25px;
   cursor: pointer;
-}
+} */
 
 header ul.nav li:hover {
   opacity: 0.5;
 }
+
+/* header .linkTo {
+  padding-left: 20px;
+  textDecoration: 'none'
+  fontFamily: "Montserrat", sans-serif;
+} */
 
 header .presentation {
   margin: 50px 0;
   background: url("./img/remont-v-stile-loft.jpg") no-repeat;
   width: 100%;
   height: 500px;
+  background-size: cover;
+  background-position: center center;
+  background-blend-mode: multiply;
+  background-color: antiquewhite;
+  position: relative;
+}
+
+header .presentation1 {
+  margin: 50px 0;
+  background: url("./img/news.jpg") no-repeat;
+  width: 100%;
+  height: 350px;
   background-size: cover;
   background-position: center center;
   background-blend-mode: multiply;
@@ -82,11 +107,13 @@ header .shop-cart-button {
   transition: color, transform 500ms ease;
 }
 
-.mule {
+/* .mule {
   font-size: 20px;
   margin-left: 10px;
-}
+} */
 
+header .linkTo:hover,
+header .linkTo.active,
 header li:hover,
 header li.active,
 header .shop-cart-button:hover,
@@ -272,7 +299,7 @@ main .add-to-cart:hover,
   transition: color, transform 500ms ease;
 }
 
-footer {
+/* footer {
   text-align: center;
   margin-top: 100px;
-}
+} */

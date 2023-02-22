@@ -1,7 +1,6 @@
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-
 export const notify = () => {
   toast.success("Товар добавлен в корзину!", {
     position: "bottom-right",
@@ -14,3 +13,5 @@ export const notify = () => {
     theme: "dark",
   });
 };
+
+

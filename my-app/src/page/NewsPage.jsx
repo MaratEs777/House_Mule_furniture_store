@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../components/header/Header";
 import styled from "styled-components";
+import { useEffect, useState } from "react";
 
 const Container = styled.div`
   background-color: #f8f8ff;
@@ -42,7 +43,7 @@ const News = styled.h3`
   margin-left: 30px;
   margin-right: 30px;
   margin-bottom: 20px;
-  color:black;
+  color: black;
 `;
 
 const ImgContainer = styled.div`
@@ -52,39 +53,64 @@ const ImgContainer = styled.div`
   margin-bottom: 20px;
   margin-top: 20px;
 `;
+const URL = "https://jsonplaceholder.typicode.com/todos?_limit=7";
 
-function NewsPage() {
-  return (
-    <div className="wrapper">
-      <Header />
-      <Container>
-        <Title>
-          Лучшие диваны для отдыха и сна: как выбрать, на что обратить внимание.
-        </Title>
-        <News>
+const NewsPage = () => {
+  const [items, setItems] = useState([]);
+  const [errores, setErrores] = useState("");
+
+  useEffect(() => {
+    const getAllData = async () => {
+      try {
+        const res = await fetch(URL);
+        const req = await res.json();
+        setItems(req);
+      } catch (e) {
+        setErrores("404", e);
+      }
+    };
+    getAllData();
+  }, []);
+
+  if (errores) {
+    return (
+      <Title style={{ fontSize: "100px", marginLeft: "500px" }}>
+        {errores}
+      </Title>
+    );
+  } else {
+    return (
+      <div className="wrapper">
+        <Header />
+        <Container>
+          <Title>Все о диванах в House Mule</Title>
           <ImgContainer>
             <img
               style={{
-                width: "60%",
-                height: "30rem",
+                width: "100%",
+                height: "31rem",
                 boxShadow: "-20px 25px 25px 3px rgba(34, 60, 80, 0.26)",
               }}
               src="https://bigfoto.name/uploads/posts/2021-12/1638699028_6-bigfoto-name-p-cherno-beloe-s-krasnim-aktsentom-v-interer-7.jpg"
               alt="Italian Trulli"
             />
           </ImgContainer>
-          Представить дом, квартиру без дивана практически невозможно.
-          Популярность этой мебели настолько широка, что многие покупают
-          раскладные модели и используют их в качестве кровати. Диван помогает
-          сэкономить пространство и обустроить уютное место отдыха. Идеальный
-          диван должен быть функциональным, удобным, а также подходить под
-          интерьер помещения. Чтобы сделать правильный выбор, важно остановиться
-          на каждой характеристике подробнее и понять, что именно подходит под
-          поставленные цели.
-        </News>
-      </Container>
-    </div>
-  );
-}
+          {items.map((item) => (
+            <News key={item.id}>
+              {item.id}. {item.title} --- Представить дом, квартиру без дивана
+              практически невозможно. Популярность этой мебели настолько широка,
+              что многие покупают раскладные модели и используют их в качестве
+              кровати. Диван помогает сэкономить пространство и обустроить
+              уютное место отдыха. Идеальный диван должен быть функциональным,
+              удобным, а также подходить под интерьер помещения. Чтобы сделать
+              правильный выбор, важно остановиться на каждой характеристике
+              подробнее и понять, что именно подходит под поставленные цели.
+            </News>
+          ))}
+        </Container>
+      </div>
+    );
+  }
+};
 
 export default NewsPage;

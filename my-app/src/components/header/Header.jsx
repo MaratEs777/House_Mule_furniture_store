@@ -54,7 +54,16 @@ function Header(props) {
     <>
       <HeaderContainer>
         <div>
-          <LogoTitle>House Mule</LogoTitle>
+          <Link
+            to={"/"}
+            style={{
+              textDecoration: "none",
+              cursor: "pointer",
+              color: "black",
+            }}
+          >
+            <LogoTitle>House Mule</LogoTitle>
+          </Link>
           <FaStickerMule style={{ fontSize: "20px", marginLeft: "10px" }} />
 
           <UlNav>

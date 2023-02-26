@@ -53,7 +53,7 @@ const ImgContainer = styled.div`
   margin-bottom: 20px;
   margin-top: 20px;
 `;
-const URL = "https://jsonplaceholder.typicode.com/todos?_limit=7";
+const URL = "https://jsonplaceholder.typicode.com/posts?_limit=7";
 
 const NewsPage = () => {
   const [items, setItems] = useState([]);
@@ -65,6 +65,7 @@ const NewsPage = () => {
         const res = await fetch(URL);
         const req = await res.json();
         setItems(req);
+        console.log(req);
       } catch (e) {
         setErrores("404", e);
       }
@@ -105,6 +106,8 @@ const NewsPage = () => {
               удобным, а также подходить под интерьер помещения. Чтобы сделать
               правильный выбор, важно остановиться на каждой характеристике
               подробнее и понять, что именно подходит под поставленные цели.
+              <br />
+              {item.body}
             </News>
           ))}
         </Container>
